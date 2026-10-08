@@ -4,132 +4,213 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CƠM TẤM SÀI GÒN</title>
+<title>Cơm Tấm Luxury</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Poppins',sans-serif;
-    background:#faf7f2;
-    color:#2b211c;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f8f3ea;
+    color:#2b1b14;
 }
 
-/* ===== NAVBAR ===== */
+button{
+    font-family:inherit;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar{
     position:fixed;
     top:0;
+    left:0;
     width:100%;
-    z-index:1000;
-    background:rgba(38,25,19,.96);
-    backdrop-filter:blur(12px);
-    padding:17px 7%;
+    height:75px;
+    z-index:999;
+
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    box-shadow:0 4px 20px rgba(0,0,0,.15);
+    justify-content:space-between;
+
+    padding:0 7%;
+
+    background:rgba(27,17,13,.96);
+    border-bottom:1px solid rgba(221,175,79,.25);
+
+    backdrop-filter:blur(12px);
 }
 
 .logo{
-    color:#e9c46a;
-    font-family:'Playfair Display',serif;
+    color:#e4b95e;
+    font-family:Georgia,serif;
     font-size:25px;
     font-weight:bold;
-    letter-spacing:1px;
 }
 
 .logo span{
-    color:white;
+    color:#fff;
 }
 
-.nav-links{
+.nav-menu{
     display:flex;
+    align-items:center;
     gap:30px;
-    list-style:none;
 }
 
-.nav-links a{
-    color:white;
-    text-decoration:none;
+.nav-menu a{
+    color:#eee;
     font-size:14px;
     transition:.3s;
 }
 
-.nav-links a:hover{
-    color:#e9c46a;
+.nav-menu a:hover{
+    color:#e4b95e;
 }
 
-.cart-btn{
-    background:#e9c46a;
-    color:#261913;
-    border:0;
-    padding:11px 17px;
-    border-radius:25px;
-    font-weight:bold;
+.cart-button{
+    border:1px solid #e4b95e;
+    background:#e4b95e;
+    color:#24150f;
+
+    padding:10px 17px;
+    border-radius:30px;
+
     cursor:pointer;
+    font-weight:bold;
+
+    transition:.3s;
 }
 
-/* ===== HERO ===== */
+.cart-button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 7px 20px rgba(228,185,94,.25);
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:100vh;
+
+    padding:130px 8% 80px;
+
     display:flex;
     align-items:center;
-    padding:120px 8% 70px;
+
     position:relative;
     overflow:hidden;
 
     background:
-    linear-gradient(90deg,
-    rgba(36,22,16,.96) 0%,
-    rgba(36,22,16,.80) 45%,
-    rgba(36,22,16,.25) 100%),
-    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85");
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(228,185,94,.20),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 20% 90%,
+            rgba(139,75,37,.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #180e0a,
+            #352018 50%,
+            #120a07
+        );
+}
 
-    background-size:cover;
-    background-position:center;
+.hero::before{
+    content:"";
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    right:-180px;
+    top:-160px;
+
+    border:1px solid rgba(228,185,94,.18);
+    border-radius:50%;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    right:-90px;
+    top:-80px;
+
+    border:1px solid rgba(228,185,94,.12);
+    border-radius:50%;
 }
 
 .hero-content{
-    max-width:650px;
-    color:white;
-    animation:fadeUp 1s ease;
+    max-width:720px;
+    position:relative;
+    z-index:2;
 }
 
-.small-title{
-    color:#e9c46a;
-    text-transform:uppercase;
-    letter-spacing:4px;
+.eyebrow{
+    color:#e4b95e;
+
     font-size:13px;
-    font-weight:600;
-    margin-bottom:18px;
+    font-weight:bold;
+
+    letter-spacing:4px;
+    text-transform:uppercase;
+
+    margin-bottom:20px;
 }
 
 .hero h1{
-    font-family:'Playfair Display',serif;
+    color:#fff;
+
+    font-family:Georgia,serif;
+
     font-size:clamp(48px,7vw,82px);
-    line-height:1.05;
-    margin-bottom:22px;
+    line-height:1.03;
+
+    margin-bottom:25px;
 }
 
 .hero h1 span{
-    color:#e9c46a;
+    color:#e4b95e;
 }
 
-.hero p{
-    color:#eee;
-    font-size:17px;
-    line-height:1.8;
-    max-width:550px;
-    margin-bottom:30px;
+.hero-description{
+    color:#d8d1cb;
+
+    max-width:600px;
+    line-height:1.9;
+    font-size:16px;
+
+    margin-bottom:35px;
 }
 
 .hero-buttons{
@@ -138,517 +219,537 @@ body{
     flex-wrap:wrap;
 }
 
-.btn-primary,
-.btn-outline{
-    padding:14px 26px;
+.btn-gold{
+    display:inline-block;
+
+    background:#e4b95e;
+    color:#24150f;
+
+    padding:15px 25px;
+
     border-radius:30px;
-    text-decoration:none;
-    font-weight:600;
+
+    font-weight:bold;
+
     transition:.3s;
 }
 
-.btn-primary{
-    background:#e9c46a;
-    color:#261913;
-}
-
-.btn-primary:hover{
+.btn-gold:hover{
     transform:translateY(-3px);
-    box-shadow:0 10px 25px rgba(233,196,106,.3);
+    box-shadow:0 10px 30px rgba(228,185,94,.25);
 }
 
 .btn-outline{
-    border:1px solid #e9c46a;
-    color:#e9c46a;
+    display:inline-block;
+
+    border:1px solid #e4b95e;
+    color:#e4b95e;
+
+    padding:15px 25px;
+
+    border-radius:30px;
+
+    transition:.3s;
 }
 
 .btn-outline:hover{
-    background:#e9c46a;
-    color:#261913;
+    background:#e4b95e;
+    color:#24150f;
 }
 
-/* ===== GENERAL ===== */
+
+/* =========================
+   HERO DECORATION
+========================= */
+
+.hero-dish{
+    position:absolute;
+
+    right:8%;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:390px;
+    height:390px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff7df 0 38%,
+            #e4b95e 39% 42%,
+            #422419 43% 67%,
+            #24130d 68%
+        );
+
+    box-shadow:
+        0 0 80px rgba(228,185,94,.15),
+        inset 0 0 30px rgba(0,0,0,.25);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:110px;
+}
+
+.hero-dish::before{
+    content:"🍖";
+    position:absolute;
+    top:90px;
+    left:90px;
+    transform:rotate(-15deg);
+}
+
+.hero-dish::after{
+    content:"🥚";
+    position:absolute;
+    bottom:85px;
+    right:80px;
+    transform:rotate(12deg);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    padding:70px 8%;
+
+    background:#fff;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+}
+
+.intro-card{
+    text-align:center;
+
+    padding:30px 20px;
+
+    border:1px solid #eadfce;
+    border-radius:15px;
+
+    background:#fffdf9;
+
+    transition:.3s;
+}
+
+.intro-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 40px rgba(57,34,21,.08);
+}
+
+.intro-icon{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.intro-card h3{
+    font-family:Georgia,serif;
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.intro-card p{
+    color:#777;
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* =========================
+   SECTION
+========================= */
 
 section{
     padding:90px 8%;
 }
 
-.section-title{
+.section-heading{
     text-align:center;
     margin-bottom:50px;
 }
-  .section-title .mini{
-    color:#a86b32;
-    font-size:13px;
-    letter-spacing:3px;
+
+.section-label{
+    color:#9a642c;
+
+    font-size:12px;
     font-weight:bold;
+
+    letter-spacing:4px;
 }
 
-.section-title h2{
-    font-family:'Playfair Display',serif;
+.section-heading h2{
+    font-family:Georgia,serif;
+
     font-size:44px;
-    margin-top:10px;
+
+    margin:10px 0;
 }
 
-.section-title p{
+.section-heading p{
     color:#777;
-    margin-top:10px;
 }
 
-/* ===== FEATURES ===== */
 
-.features{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    margin-top:-40px;
-    position:relative;
-    z-index:5;
-}
-
-.feature{
-    background:white;
-    padding:30px;
-    text-align:center;
-    border-radius:16px;
-    box-shadow:0 15px 40px rgba(48,29,20,.09);
-}
-
-.feature-icon{
-    font-size:35px;
-    margin-bottom:12px;
-}
-
-.feature h3{
-    font-family:'Playfair Display',serif;
-    font-size:22px;
-    margin-bottom:8px;
-}
-
-.feature p{
-    color:#777;
-    font-size:14px;
-}
-
-/* ===== MENU ===== */
+/* =========================
+   MENU
+========================= */
 
 .menu{
-    background:#fff;
+    background:#f8f3ea;
 }
 
 .menu-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:28px;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
 }
 
 .food-card{
-    background:#faf7f2;
-    border-radius:18px;
     overflow:hidden;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    border:1px solid #e9dece;
+
     transition:.35s;
-    border:1px solid #eee5dc;
 }
 
 .food-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 40px rgba(50,30,20,.12);
+    transform:translateY(-7px);
+    box-shadow:
+        0 20px 45px
+        rgba(56,31,18,.12);
 }
 
-.food-img{
-    height:230px;
-    background-size:cover;
-    background-position:center;
+.food-visual{
+    height:220px;
+
     position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff4d8,
+            #e5c98c
+        );
 }
 
-.badge{
+.food-visual::before{
+    content:"";
+
     position:absolute;
+
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fffdf3 0 54%,
+            #c49345 55% 61%,
+            #392117 62%
+        );
+
+    box-shadow:
+        0 15px 25px rgba(0,0,0,.2);
+}
+
+.food-emoji{
+    position:relative;
+    z-index:2;
+
+    font-size:76px;
+
+    filter:drop-shadow(
+        0 8px 5px rgba(0,0,0,.2)
+    );
+}
+
+.food-tag{
+    position:absolute;
+
     top:15px;
     left:15px;
-    background:#261913;
-    color:#e9c46a;
-    padding:7px 12px;
+
+    z-index:5;
+
+    background:#24150f;
+    color:#e4b95e;
+
+    padding:7px 11px;
+
     border-radius:20px;
-    font-size:11px;
+
+    font-size:10px;
     font-weight:bold;
 }
 
 .food-info{
-    padding:22px;
+    padding:23px;
 }
 
 .food-info h3{
-    font-family:'Playfair Display',serif;
-    font-size:23px;
+    font-family:Georgia,serif;
+
+    font-size:22px;
+
     margin-bottom:8px;
 }
 
 .food-info p{
     color:#777;
+
     font-size:13px;
     line-height:1.7;
-    min-height:45px;
+
+    min-height:44px;
 }
 
 .food-bottom{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
     margin-top:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .price{
-    color:#9b5e26;
-    font-size:20px;
+    color:#9a5c25;
+
+    font-size:19px;
     font-weight:bold;
 }
 
-.add-btn{
+.add-button{
     border:0;
-    background:#261913;
-    color:white;
-    padding:10px 15px;
+
+    background:#2b1810;
+    color:#fff;
+
+    padding:10px 16px;
+
     border-radius:25px;
+
     cursor:pointer;
+
     transition:.3s;
 }
 
-.add-btn:hover{
-    background:#9b5e26;
+.add-button:hover{
+    background:#a5682d;
 }
 
-/* ===== ABOUT ===== */
+
+/* =========================
+   ABOUT
+========================= */
 
 .about{
+    background:#fff;
+
     display:grid;
     grid-template-columns:1fr 1fr;
+
     gap:70px;
+
     align-items:center;
 }
 
-.about-img{
-    min-height:500px;
+.about-art{
+    min-height:460px;
+
     border-radius:20px;
+
     background:
-    url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85")
-    center/cover;
-    box-shadow:20px 20px 0 #e9c46a;
+        radial-gradient(
+            circle at 50% 45%,
+            #f9e7b8,
+            #c48b46 38%,
+            #57321f 39% 55%,
+            #23130d 56%
+        );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:130px;
+
+    box-shadow:
+        20px 20px 0 #e4b95e;
 }
 
-.about-text .mini{
-    color:#a86b32;
-    letter-spacing:3px;
-    font-size:13px;
+.about-label{
+    color:#9a642c;
+
+    font-size:12px;
+    letter-spacing:4px;
     font-weight:bold;
 }
 
-.about-text h2{
-    font-family:'Playfair Display',serif;
+.about h2{
+    font-family:Georgia,serif;
+
     font-size:45px;
     line-height:1.15;
-    margin:15px 0 20px;
+
+    margin:12px 0 20px;
 }
 
-.about-text p{
+.about p{
     color:#666;
+
     line-height:1.9;
+
     margin-bottom:15px;
 }
 
-.check{
-    margin-top:20px;
-    line-height:2;
+.check-list{
+    margin-top:25px;
 }
 
-.check span{
-    color:#a86b32;
-    font-weight:bold;
+.check-list div{
+    margin:10px 0;
+    font-weight:500;
 }
 
-/* ===== REVIEWS ===== */
+.check-list span{
+    color:#a5662c;
+    margin-right:8px;
+}
+
+
+/* =========================
+   REVIEWS
+========================= */
 
 .reviews{
-    background:#261913;
-    color:white;
-}
-  .reviews .section-title p{
-    color:#bbb;
+    background:#24150f;
+    color:#fff;
 }
 
-.reviews .section-title h2{
-    color:white;
+.reviews .section-heading h2{
+    color:#fff;
+}
+
+.reviews .section-heading p{
+    color:#bbb;
 }
 
 .review-grid{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:25px;
 }
-
-.review{
-    background:#34251e;
+    .review-card{
     padding:28px;
+
+    background:#342019;
+
+    border:1px solid rgba(228,185,94,.15);
+
     border-radius:16px;
 }
 
 .stars{
-    color:#e9c46a;
+    color:#e4b95e;
+
+    font-size:18px;
+
     margin-bottom:15px;
 }
 
-.review p{
+.review-card p{
     color:#ddd;
+
     line-height:1.8;
+
     font-size:14px;
 }
 
-.user{
+.reviewer{
     margin-top:20px;
+
+    color:#e4b95e;
+
     font-weight:bold;
 }
 
-/* ===== CONTACT ===== */
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact{
+    background:#f8f3ea;
+
     text-align:center;
 }
 
 .contact-box{
-    max-width:800px;
+    max-width:850px;
+
     margin:auto;
-    background:#261913;
-    color:white;
+
+    padding:55px 30px;
+
     border-radius:20px;
-    padding:50px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #24150f,
+            #432619
+        );
+
+    color:#fff;
+
+    box-shadow:
+        0 20px 50px rgba(50,28,16,.15);
 }
 
 .contact-box h2{
-    font-family:'Playfair Display',serif;
+    font-family:Georgia,serif;
+
     font-size:38px;
+
     margin-bottom:15px;
 }
 
 .contact-box p{
     color:#ccc;
-    margin-bottom:25px;
+
+    margin:8px 0;
 }
 
-/* ===== FOOTER ===== */
+.contact-buttons{
+    margin-top:25px;
 
-footer{
-    background:#18100d;
-    color:#aaa;
-    text-align:center;
-    padding:30px;
-    font-size:13px;
-}
-
-footer strong{
-    color:#e9c46a;
-}
-
-/* ===== CART ===== */
-
-.cart-panel{
-    position:fixed;
-    top:0;
-    right:-420px;
-    width:390px;
-    max-width:90%;
-    height:100vh;
-    background:white;
-    z-index:2000;
-    box-shadow:-10px 0 40px rgba(0,0,0,.2);
-    transition:.4s;
-    padding:25px;
     display:flex;
-    flex-direction:column;
-}
 
-.cart-panel.active{
-    right:0;
-}
-
-.cart-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding-bottom:20px;
-    border-bottom:1px solid #eee;
-}
-
-.cart-header h2{
-    font-family:'Playfair Display',serif;
-}
-
-.close-cart{
-    border:0;
-    background:none;
-    font-size:25px;
-    cursor:pointer;
-}
-
-.cart-items{
-    flex:1;
-    overflow:auto;
-    padding:20px 0;
-}
-
-.cart-item{
-    display:flex;
-    justify-content:space-between;
-    gap:10px;
-    padding:14px 0;
-    border-bottom:1px solid #eee;
-}
-
-.cart-item h4{
-    font-size:14px;
-}
-
-.cart-item small{
-    color:#999;
-}
-
-.qty{
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.qty button{
-    width:25px;
-    height:25px;
-    border:0;
-    border-radius:50%;
-    cursor:pointer;
-}
-
-.cart-total{
-    border-top:1px solid #ddd;
-    padding-top:20px;
-}
-
-.total-row{
-    display:flex;
-    justify-content:space-between;
-    font-weight:bold;
-    font-size:20px;
-    margin-bottom:20px;
-}
-
-.checkout{
-    width:100%;
-    border:0;
-    padding:15px;
-    border-radius:30px;
-    background:#9b5e26;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* ===== OVERLAY ===== */
-
-.overlay{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.5);
-    z-index:1500;
-    opacity:0;
-    visibility:hidden;
-    transition:.3s;
-}
-
-.overlay.active{
-    opacity:1;
-    visibility:visible;
-}
-
-/* ===== ANIMATION ===== */
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* ===== MOBILE ===== */
-
-@media(max-width:800px){
-
-    .nav-links{
-        display:none;
-    }
-
-    .navbar{
-    padding:15px 5%;
-    }
-
-    .hero{
-        padding:120px 7% 70px;
-        background-position:center;
-    }
-
-    .hero h1{
-        font-size:52px;
-    }
-
-    .features{
-        grid-template-columns:1fr;
-        margin:20px 7%;
-    }
-
-    .menu-grid{
-        grid-template-columns:1fr;
-    }
-
-    .about{
-        grid-template-columns:1fr;
-        gap:40px;
-    }
-
-    .about-img{
-        min-height:350px;
-    }
-
-    .review-grid{
-        grid-template-columns:1fr;
-    }
-
-    section{
-        padding:70px 7%;
-    }
-
-    .section-title h2{
-        font-size:36px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAVBAR -->
-
-<nav class="navbar">
-
-    <div class="logo">
-        CƠM TẤM <span>SÀI GÒN</span>
-    </div>
-
-    <ul class="nav-links">
-        <li><a href="#home">Trang chủ</a></li>
-        <li><a href="#menu">Thực đơn</a></li>
-        <li><a href="#about">Về chúng tôi</a></li>
-        <li><a href="#reviews">Đánh giá</a></li>
-        <li><a href="#contact">Liên hệ</a></li>
-    </ul>
-
-    <button class="cart-btn" onclick="openCart()">  
+    justify-content
