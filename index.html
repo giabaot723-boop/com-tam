@@ -207,6 +207,7 @@ a{
     color:#d8d1cb;
 
     max-width:600px;
+
     line-height:1.9;
     font-size:16px;
 
@@ -430,6 +431,7 @@ section{
 
 .food-card:hover{
     transform:translateY(-7px);
+
     box-shadow:
         0 20px 45px
         rgba(56,31,18,.12);
@@ -666,7 +668,8 @@ section{
 
     gap:25px;
 }
-    .review-card{
+
+.review-card{
     padding:28px;
 
     background:#342019;
@@ -752,4 +755,1389 @@ section{
 
     display:flex;
 
-    justify-content
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#130a07;
+
+    color:#aaa;
+
+    text-align:center;
+
+    padding:30px 20px;
+
+    font-size:13px;
+}
+
+footer strong{
+    color:#e4b95e;
+}
+
+
+/* =========================
+   CART
+========================= */
+
+.overlay{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.55);
+
+    z-index:1999;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+}
+
+.overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.cart{
+    position:fixed;
+
+    top:0;
+    right:-430px;
+
+    width:410px;
+    max-width:92%;
+
+    height:100vh;
+
+    background:#fff;
+
+    z-index:2000;
+
+    padding:25px;
+
+    display:flex;
+    flex-direction:column;
+
+    transition:.4s;
+
+    box-shadow:-15px 0 40px rgba(0,0,0,.2);
+}
+
+.cart.active{
+    right:0;
+}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid #eee;
+}
+
+.cart-header h2{
+    font-family:Georgia,serif;
+}
+
+.close{
+    border:0;
+
+    background:none;
+
+    font-size:28px;
+
+    cursor:pointer;
+}
+
+.cart-items{
+    flex:1;
+
+    overflow:auto;
+
+    padding:20px 0;
+}
+
+.empty{
+    text-align:center;
+
+    color:#999;
+
+    margin-top:50px;
+}
+
+.cart-item{
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #eee;
+}
+
+.cart-item h4{
+    font-size:14px;
+}
+
+.cart-item small{
+    color:#999;
+}
+
+.quantity{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.quantity button{
+    width:27px;
+    height:27px;
+
+    border:0;
+
+    border-radius:50%;
+
+    cursor:pointer;
+}
+
+.cart-bottom{
+    border-top:1px solid #ddd;
+
+    padding-top:20px;
+}
+
+.total{
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:20px;
+    font-weight:bold;
+
+    margin-bottom:18px;
+}
+
+.checkout{
+    width:100%;
+
+    border:0;
+
+    background:#a5682d;
+    color:#fff;
+
+    padding:15px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+
+    left:50%;
+    bottom:30px;
+
+    transform:
+        translate(-50%,100px);
+
+    background:#24150f;
+    color:#fff;
+
+    padding:13px 22px;
+
+    border-radius:30px;
+
+    z-index:5000;
+
+    opacity:0;
+
+    transition:.4s;
+
+    border:1px solid #e4b95e;
+}
+
+.toast.show{
+    opacity:1;
+
+    transform:
+        translate(-50%,0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .nav-menu{
+        display:none;
+    }
+
+    .hero{
+        min-height:850px;
+    }
+
+    .hero-dish{
+        opacity:.20;
+
+        right:-100px;
+
+        width:330px;
+        height:330px;
+    }
+
+    .intro{
+        grid-template-columns:1fr;
+    }
+
+    .menu-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:0 5%;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+
+    .cart-button{
+        padding:8px 11px;
+        font-size:12px;
+    }
+
+    section{
+        padding:70px 6%;
+    }
+
+    .hero{
+        padding:120px 7% 70px;
+    }
+
+    .hero h1{
+        font-size:51px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .menu-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-heading h2{
+        font-size:34px;
+    }
+
+    .about h2{
+        font-size:36px;
+    }
+
+    .about-art{
+        min-height:330px;
+        font-size:100px;
+    }
+
+    .hero-dish{
+        width:280px;
+        height:280px;
+
+        right:-100px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        CƠM TẤM <span>SÀI GÒN</span>
+    </div>
+
+    <div class="nav-menu">
+
+        <a href="#home">Trang chủ</a>
+
+        <a href="#menu">Thực đơn</a>
+
+        <a href="#about">Về chúng tôi</a>
+
+        <a href="#reviews">Đánh giá</a>
+
+        <a href="#contact">Liên hệ</a>
+
+    </div>
+
+    <button class="cart-button" onclick="openCart()">
+        🛒 Giỏ hàng
+        (<span id="cartCount">0</span>)
+    </button>
+
+</nav>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Tinh hoa ẩm thực Sài Gòn
+        </div>
+
+        <h1>
+            Một phần<br>
+            <span>Cơm Tấm</span><br>
+            một phần tình.
+        </h1>
+
+        <p class="hero-description">
+            Hạt cơm tấm mềm thơm, sườn nướng đậm đà,
+            bì thơm, chả béo và nước mắm pha theo công thức
+            riêng. Tất cả tạo nên một hương vị Sài Gòn
+            không thể quên.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#menu" class="btn-gold">
+                Xem thực đơn
+            </a>
+
+            <a href="#about" class="btn-outline">
+                Câu chuyện của chúng tôi
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-dish">
+        🍚
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<div class="intro">
+
+    <div class="intro-card">
+
+        <div class="intro-icon">
+            🔥
+        </div>
+
+        <h3>
+            Nướng nóng mỗi ngày
+        </h3>
+
+        <p>
+            Sườn được nướng nóng để giữ trọn
+            hương thơm và độ mềm.
+        </p>
+
+    </div>
+
+
+    <div class="intro-card">
+
+        <div class="intro-icon">
+            🍚
+        </div>
+
+        <h3>
+            Cơm tấm chuẩn vị
+        </h3>
+
+        <p>
+            Hạt cơm tấm mềm, thơm và tơi nhẹ
+            theo phong cách Sài Gòn.
+        </p>
+
+    </div>
+
+
+    <div class="intro-card">
+
+        <div class="intro-icon">
+            👑
+        </div>
+
+        <h3>
+            Phục vụ tận tâm
+        </h3>
+
+        <p>
+            Mỗi phần ăn đều được chuẩn bị
+            bằng sự chỉn chu.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section class="menu" id="menu">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            OUR MENU
+        </div>
+
+        <h2>
+            Thực đơn đặc biệt
+        </h2>
+
+        <p>
+            Chọn món yêu thích của bạn
+        </p>
+
+    </div>
+
+
+    <div class="menu-grid">
+
+
+        <!-- 1 -->
+
+        <div class="food-card">
+
+            <div class="food-visual">
+
+                <div class="food-tag">
+                    BEST SELLER
+                </div>
+
+                <div class="food-emoji">
+                    🍖🍚
+                </div>
+
+            </div>
+
+            <div class="food-info">
+
+                <h3>
+                    Cơm Tấm Sườn Nướng
+                </h3>
+
+                <p>
+                    Sườn nướng mật ong, cơm tấm,
+                    bì, chả và trứng ốp la.
+                </p>
+
+                <div class="food-bottom">
+
+                    <span class="price">
+                        65.000đ
+                    </span>
+
+                    <button
+                        class="add-button"
+                        onclick="addItem('Cơm Tấm Sườn Nướng',65000)"
+                    >
+                        + Thêm
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2 -->
+
+        <div class="food-card">
+
+            <div class="food-visual">
+
+                <div class="food-tag">
+                    SIGNATURE
+                </div>
+
+                <div class="food-emoji">
+                    🍖🥚🍚
+                </div>
+
+            </div>
+
+            <div class="food-info">
+
+                <h3>
+                    Cơm Tấm Đặc Biệt
+                </h3>
+
+                <p>
+                    Sườn, bì, chả trứng, trứng ốp la
+                    và nước mắm đặc biệt.
+                </p>
+
+                <div class="food-bottom">
+
+                    <span class="price">
+                        79.000đ
+                    </span>
+
+                    <button
+                        class="add-button"
+                        onclick="addItem('Cơm Tấm Đặc Biệt',79000)"
+                    >
+                        + Thêm
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 3 -->
+
+        <div class="food-card">
+
+            <div class="food-visual">
+
+                <div class="food-emoji">
+                    🍖🥚
+                </div>
+
+            </div>
+
+            <div class="food-info">
+
+                <h3>
+                    Cơm Tấm Sườn Trứng
+                </h3>
+
+                <p>
+                    Sườn nướng thơm lừng cùng
+                    trứng ốp la béo ngậy.
+                </p>
+
+                <div class="food-bottom">
+
+                    <span class="price">
+                        59.000đ
+                    </span>
+
+                    <button
+                        class="add-button"
+                        onclick="addItem('Cơm Tấm Sườn Trứng',59000)"
+                    >
+                        + Thêm
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 4 -->
+
+        <div class="food-card">
+
+            <div class="food-visual">
+
+                <div class="food-emoji">
+                    🍳🍚
+                </div>
+
+            </div>
+
+            <div class="food-info">
+
+                <h3>
+                    Cơm Tấm Chả Trứng
+                </h3>
+
+                <p>
+                    Chả trứng hấp mềm, thơm béo
+                    cùng cơm tấm nóng.
+                </p>
+
+                <div class="food-bottom">
+
+                    <span class="price">
+                        49.000đ
+                    </span>
+
+                    <button
+                        class="add-button"
+                        onclick="addItem('Cơm Tấm Chả Trứng',49000)"
+                    >
+                        + Thêm
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5 -->
+
+        <div class="food-card">
+
+            <div class="food-visual">
+
+                <div class="food-emoji">
+                    🥓🍚
+                </div>
+
+            </div>
+
+            <div class="food-info">
+
+                <h3>
+                    Cơm Tấm Bì
+                </h3>
+
+                <p>
+                    Bì trộn thính thơm cùng cơm tấm
+                    và nước mắm chua ngọt.
+                </p>
+
+                <div class="food-bottom">
+
+                    <span class="price">
+                        45.000đ
+                    </span>
+
+                    <button
+                        class="add-button"
+                        onclick="addItem('Cơm Tấm Bì',45000)"
+                    >
+                        + Thêm
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 6 -->
+
+        <div class="food-card">
+
+            <div class="food-visual">
+
+                <div class="food-tag">
+                    COMBO
+                </div>
+
+                <div class="food-emoji">
+                    🍖🍳🥓
+                </div>
+
+            </div>
+
+            <div class="food-info">
+
+                <h3>
+                    Combo Sài Gòn
+                </h3>
+
+                <p>
+                    Sườn + bì + chả + trứng.
+                    Một phần ăn đầy đủ và no lâu.
+                </p>
+
+                <div class="food-bottom">
+
+                    <span class="price">
+                        89.000đ
+                    </span>
+
+                    <button
+                        class="add-button"
+                        onclick="addItem('Combo Sài Gòn',89000)"
+                    >
+                        + Thêm
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+    <div class="about-art">
+        🍚
+    </div>
+
+
+    <div>
+
+        <div class="about-label">
+            OUR STORY
+        </div>
+
+        <h2>
+            Hương vị quen thuộc,
+            phong cách khác biệt.
+        </h2>
+
+        <p>
+            Cơm Tấm Sài Gòn được tạo nên từ tình yêu
+            dành cho món ăn quen thuộc của người Việt.
+        </p>
+
+        <p>
+            Chúng tôi muốn mỗi phần cơm không chỉ ngon
+            mà còn mang lại cảm giác như đang thưởng thức
+            một chút Sài Gòn trong chính bữa ăn của mình.
+        </p>
+
+        <div class="check-list">
+
+            <div>
+                <span>✓</span>
+                Nguyên liệu được chọn lọc
+            </div>
+
+            <div>
+                <span>✓</span>
+                Sườn nướng theo công thức riêng
+            </div>
+
+            <div>
+                <span>✓</span>
+                Nước mắm pha đặc biệt
+            </div>
+
+            <div>
+                <span>✓</span>
+                Đóng gói sạch sẽ, chỉn chu
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     REVIEWS
+========================= -->
+
+<section class="reviews" id="reviews">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            CUSTOMER LOVE
+        </div>
+
+        <h2>
+            Khách hàng nói gì?
+        </h2>
+
+        <p>
+            Những lời yêu thương dành cho quán
+        </p>
+
+    </div>
+
+
+    <div class="review-grid">
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                “Sườn nướng thơm, cơm mềm,
+                nước mắm rất vừa miệng.
+                Ăn một lần là muốn quay lại.”
+            </p>
+
+            <div class="reviewer">
+                — Minh Anh
+            </div>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                “Phần ăn đầy đặn, trình bày đẹp.
+                Đặc biệt thích món cơm tấm
+                sườn trứng.”
+            </p>
+
+            <div class="reviewer">
+                — Hoàng Nam
+            </div>
+
+        </div>
+
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+                “Một phần cơm mang đúng chất
+                Sài Gòn. Giá hợp lý và rất ngon.”
+            </p>
+
+            <div class="reviewer">
+                — Thảo Vy
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <div class="section-heading">
+
+        <div class="section-label">
+            CONTACT
+        </div>
+
+        <h2>
+            Đặt món ngay
+        </h2>
+
+        <p>
+            Một bữa cơm ngon đang chờ bạn
+        </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+        <h2>
+            CƠM TẤM SÀI GÒN
+        </h2>
+
+        <p>
+            📍 123 Nguyễn Trãi, Quận 1, TP. Hồ Chí Minh
+        </p>
+
+        <p>
+            ☎️ 0909 123 456
+        </p>
+
+        <p>
+            🕐 10:00 — 22:00 mỗi ngày
+        </p>
+
+
+        <div class="contact-buttons">
+
+            <a
+                class="btn-gold"
+                href="tel:0909123456"
+            >
+                📞 Gọi đặt món
+            </a>
+
+            <a
+                class="btn-outline"
+                href="#menu"
+            >
+                🍚 Chọn món
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026
+    <strong>CƠM TẤM SÀI GÒN</strong>
+
+    <br><br>
+
+    Hương vị truyền thống — Phong cách hiện đại.
+
+</footer>
+
+
+
+<!-- =========================
+     CART
+========================= -->
+
+<div
+    class="overlay"
+    id="overlay"
+    onclick="closeCart()"
+</div>
+
+
+
+<div
+    class="cart"
+    id="cart"
+
+
+    <div class="cart-header">
+
+        <h2>
+            🛒 Giỏ hàng
+        </h2>
+
+        <button
+            class="close"
+            onclick="closeCart()"
+        >
+            ×
+        </button>
+
+    </div>
+
+
+    <div
+        class="cart-items"
+        id="cartItems"
+    >
+
+        <div class="empty">
+            Giỏ hàng đang trống 🍚
+        </div>
+
+    </div>
+
+
+    <div class="cart-bottom">
+
+        <div class="total">
+
+            <span>
+                Tổng cộng
+            </span>
+
+            <span id="totalPrice">
+                0đ
+            </span>
+
+        </div>
+
+        <button
+            class="checkout"
+            onclick="checkout()"
+        >
+            ĐẶT MÓN NGAY
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     TOAST
+========================= -->
+
+<div
+    class="toast"
+    id="toast"
+>
+    Đã thêm món vào giỏ 🛒
+</div>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+let cart = [];
+
+
+/* =========================
+   THÊM MÓN
+========================= */
+
+function addItem(name,price){
+
+    let item = cart.find(
+        product => product.name === name
+    );
+
+    if(item){
+
+        item.quantity++;
+
+    }else{
+
+        cart.push({
+            name:name,
+            price:price,
+            quantity:1
+        });
+
+    }
+
+    updateCart();
+
+    showToast();
+
+}
+
+
+/* =========================
+   CẬP NHẬT GIỎ
+========================= */
+
+function updateCart(){
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+    const cartCount =
+        document.getElementById("cartCount");
+
+    const totalPrice =
+        document.getElementById("totalPrice");
+
+
+    let count = 0;
+
+    let total = 0;
+
+
+    if(cart.length === 0){
+
+        cartItems.innerHTML = `
+            <div class="empty">
+                Giỏ hàng đang trống 🍚
+            </div>
+        `;
+
+    }else{
+
+        cartItems.innerHTML = "";
+
+        cart.forEach((item,index)=>{
+
+            count += item.quantity;
+
+            total +=
+                item.price *
+                item.quantity;
+
+
+            cartItems.innerHTML += `
+
+                <div class="cart-item">
+
+                    <div>
+
+                        <h4>
+                            ${item.name}
+                        </h4>
+
+                        <small>
+                            ${item.price.toLocaleString("vi-VN")}đ
+                        </small>
+
+                    </div>
+
+
+                    <div class="quantity">
+
+                        <button
+                            onclick="changeQuantity(${index},-1)"
+                        >
+                            −
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                            onclick="changeQuantity(${index},1)"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+
+    cartCount.innerText = count;
+
+
+    totalPrice.innerText =
+        total.toLocaleString("vi-VN")
+        + "đ";
+
+}
+
+
+/* =========================
+   TĂNG GIẢM
+========================= */
+
+function changeQuantity(index,change){
+
+    cart[index].quantity += change;
+
+
+    if(cart[index].quantity <= 0){
+
+        cart.splice(index,1);
+
+    }
+
+
+    updateCart();
+
+}
+
+
+/* =========================
+   MỞ GIỎ
+========================= */
+
+function openCart(){
+
+    document
+        .getElementById("cart")
+        .classList
+        .add("active");
+
+
+    document
+        .getElementById("overlay")
+        .classList
+        .add("active");
+
+}
+
+
+/* =========================
+   ĐÓNG GIỎ
+========================= */
+
+function closeCart(){
+
+    document
+        .getElementById("cart")
+        .classList
+        .remove("active");
+
+
+    document
+        .getElementById("overlay")
+        .classList
+        .remove("active");
+
+}
+
+
+/* =========================
+   THÔNG BÁO
+========================= */
+
+function showToast(){
+
+    const toast =
+        document.getElementById("toast");
+
+
+    toast.classList.add("show");
+
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },1800);
+
+}
+
+
+/* =========================
+   CHECKOUT
+========================= */
+
+function checkout(){
+
+    if(cart.length === 0){
+
+        alert(
+            "Giỏ hàng đang trống nha bạn ❤️"
+        );
+
+        return;
+
+    }
+
+
+    let message =
+        "🍚 ĐƠN HÀNG CƠM TẤM SÀI GÒN\n\n";
+
+
+    cart.forEach(item=>{
+
+        message +=
+            "• "
+            + item.name
+            + " x "
+            + item.quantity
+            + "\n";
+
+    });
+
+
+    let total = cart.reduce(
+        (sum,item)=>
+            sum +
+            item.price *
+            item.quantity,
+        0
+    );
+
+
+    message +=
+        "\n💰 Tổng tiền: "
+        +
+        total.toLocaleString("vi-VN")
+        +
+        "đ";
+
+
+    message +=
+        "\n\n📞 Vui lòng gọi 0909 123 456 để xác nhận đơn.";
+
+
+    alert(message);
+
+}
+
+</script>
+
+</body>
+</html>
+Đã gửi 2 phút trước
+Soạn
+Viết cho Ho Ng Phuong Uyen
